@@ -35,23 +35,30 @@ Instructions were not tested with other shells on Windows.
     git clone https://github.com/blinkreaction/drude-testing.git
     cd drude-testing
     ```
-
-5. Set up `settings.local.php` in `sites/default`
+    
+5. Set up `docker-compose`
+ 
+    ```
+    cp docker-compose.yml.dist docker-compose.yml
+    ```
+    
+6. Set up `settings.local.php` in `sites/default`
  
     ```
     cd docroot/sites/default
     cp example.settings.local.php settings.local.php
     ```
 
-6. Install Drupal
+7. Start the containers and install Drupal
  
     ```
+    dsh start
     dsh drush si -y
     ```
 
-7. Add `192.168.10.10  hello-world.drude` to your hosts file
+8. Add `192.168.10.10  hello-world.drude` to your hosts file
 
-8. Point your browser to
+9. Point your browser to
 
     ```
     http://hello-world.drude
